@@ -1,9 +1,12 @@
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+
 public class VendingMachineTest {
 
-    @Test(expected = ClassNotFoundException.class)
+    @Test()
     public void classExists() throws ClassNotFoundException {
-        Class.forName("vendingmachine.VendingMachine");
+        assertThat(Class.forName("vendingmachine.VendingMachine").getName()).isEqualTo("vendingmachine.VendingMachine");
     }
 }
