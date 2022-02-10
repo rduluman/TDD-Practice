@@ -1,10 +1,14 @@
 import org.junit.Test;
 import vendingmachine.VendingMachine;
 
+import java.util.Set;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class VendingMachineTest {
+
+    Set<String> validProducts = Set.of("cola", "sprite", "fanta", "pepsi");
 
     @Test()
     public void classExists() throws ClassNotFoundException {
@@ -12,19 +16,14 @@ public class VendingMachineTest {
     }
 
     @Test()
-    public void getProduct() {
-        VendingMachine vendingMachine = new VendingMachine();
-        assertThat(vendingMachine.getProduct("cola")).isEqualTo("cola");
-    }
 
-    @Test()
-    public void getFanta() {
+    public void verifyCorrectProductIsReturned() {
         VendingMachine vendingMachine = new VendingMachine();
-        assertThat(vendingMachine.getProduct("fanta")).isEqualTo("fanta");
+        validProducts.forEach(product -> assertThat(vendingMachine.getProduct(product)).isEqualTo(product));
     }
 
     @Test
-    public void getSomethingElse() {
+    public void verifyInvalidInputsReturnBlank() {
         VendingMachine vendingMachine = new VendingMachine();
         assertThat(vendingMachine.getProduct("elefant")).isBlank();
     }
