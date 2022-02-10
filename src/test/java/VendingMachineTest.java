@@ -16,4 +16,10 @@ public class VendingMachineTest {
         VendingMachine vendingMachine = new VendingMachine();
         assertThat(vendingMachine.getProduct("cola")).isEqualTo("cola");
     }
+
+    @Test()
+    public void getFanta() {
+        VendingMachine vendingMachine = new VendingMachine();
+        assertThat(vendingMachine.getProduct("fanta")).isEqualTo("fanta");
+    }
 }
