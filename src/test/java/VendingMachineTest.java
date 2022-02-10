@@ -27,4 +27,10 @@ public class VendingMachineTest {
         VendingMachine vendingMachine = new VendingMachine();
         assertThat(vendingMachine.getProduct("elefant")).isBlank();
     }
+
+    @Test
+    public void verifyUserCanInsertMoney() {
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.addMoney(5);
+    }
 }
