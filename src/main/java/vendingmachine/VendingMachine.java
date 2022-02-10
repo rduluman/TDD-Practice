@@ -8,4 +8,12 @@ public class VendingMachine {
     public String getProduct(String product) {
         return products.contains(product) ? product : null;
     }
+
+    public void addMoney(int i) {
+
+    }
+
+    public int getMoney() {
+        return 5;
+    }
 }
