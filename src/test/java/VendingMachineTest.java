@@ -34,4 +34,11 @@ public class VendingMachineTest {
         vendingMachine.addMoney(5);
         assertThat(vendingMachine.getMoney()).isNotNull();
     }
+
+    @Test
+    public void verifyVendingMachineHasCorrectAmountOfMoney() {
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine.addMoney(10);
+        assertThat(vendingMachine.getMoney()).isEqualTo(10);
+    }
 }
