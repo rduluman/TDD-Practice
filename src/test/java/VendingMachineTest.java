@@ -29,26 +29,13 @@ public class VendingMachineTest {
     }
 
     @Test
-    public void verifyUserCanInsertMoney() {
-        VendingMachine vendingMachine = new VendingMachine();
-        vendingMachine.addMoney(5);
-        assertThat(vendingMachine.getMoney()).isNotNull();
-    }
-
-    @Test
     public void verifyVendingMachineHasCorrectAmountOfMoney() {
         VendingMachine vendingMachine = new VendingMachine();
-        int randomValue = (int) (Math.random() * 10);
-        vendingMachine.addMoney(randomValue);
-        assertThat(vendingMachine.getMoney()).isEqualTo(randomValue);
-    }
-
-    @Test
-    public void verifyVendingMachineHasAddsUpMoney() {
-        VendingMachine vendingMachine = new VendingMachine();
-
-        vendingMachine.addMoney(5);
-        vendingMachine.addMoney(10);
-        assertThat(vendingMachine.getMoney()).isEqualTo(15);
+        int firstRandomValue = (int) (Math.random() * 10);
+        vendingMachine.addMoney(firstRandomValue);
+        assertThat(vendingMachine.getMoney()).isEqualTo(firstRandomValue);
+        int secondRandomValue = (int) (Math.random() * 10);
+        vendingMachine.addMoney(secondRandomValue);
+        assertThat(vendingMachine.getMoney()).isEqualTo(firstRandomValue + secondRandomValue);
     }
 }

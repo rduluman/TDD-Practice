@@ -11,7 +11,7 @@ public class VendingMachine {
     }
 
     public void addMoney(int userMoney) {
-        money = userMoney;
+        money += userMoney;
     }
 
     public int getMoney() {
