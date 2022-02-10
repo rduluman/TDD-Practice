@@ -19,7 +19,7 @@ public enum Drink {
     }
 
     public static Optional<Drink> get(String drinkString) {
-        requireNonNull(drinkString, "Contract type is required");
+        requireNonNull(drinkString, "Drink type is required");
 
         return Arrays.stream(Drink.values())
                 .filter(drink -> drink.getValue().equalsIgnoreCase(drinkString))
