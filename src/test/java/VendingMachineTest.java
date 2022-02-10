@@ -22,4 +22,10 @@ public class VendingMachineTest {
         VendingMachine vendingMachine = new VendingMachine();
         assertThat(vendingMachine.getProduct("fanta")).isEqualTo("fanta");
     }
+
+    @Test
+    public void getSomethingElse() {
+        VendingMachine vendingMachine = new VendingMachine();
+        assertThat(vendingMachine.getProduct("elefant")).isBlank();
+    }
 }
