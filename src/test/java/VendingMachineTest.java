@@ -1,8 +1,10 @@
 import org.junit.Before;
 import org.junit.Test;
+import vendingmachine.Drink;
 import vendingmachine.VendingMachine;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static vendingmachine.Drink.COLA;
 
 
 public class VendingMachineTest {
@@ -21,7 +23,6 @@ public class VendingMachineTest {
 
     @Test()
     public void givenColaIsSelected_then_colaIsReturned() {
-        vendingMachine.selectDrink(cola);
-        assertThat(vendingMachine.retrieveProduct()).isEqualTo(cola);
+        assertThat(vendingMachine.buyDrink(COLA)).isEqualTo(COLA);
     }
 }
