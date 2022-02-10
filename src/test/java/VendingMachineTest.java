@@ -38,7 +38,17 @@ public class VendingMachineTest {
     @Test
     public void verifyVendingMachineHasCorrectAmountOfMoney() {
         VendingMachine vendingMachine = new VendingMachine();
+        int randomValue = (int) (Math.random() * 10);
+        vendingMachine.addMoney(randomValue);
+        assertThat(vendingMachine.getMoney()).isEqualTo(randomValue);
+    }
+
+    @Test
+    public void verifyVendingMachineHasAddsUpMoney() {
+        VendingMachine vendingMachine = new VendingMachine();
+
+        vendingMachine.addMoney(5);
         vendingMachine.addMoney(10);
-        assertThat(vendingMachine.getMoney()).isEqualTo(10);
+        assertThat(vendingMachine.getMoney()).isEqualTo(15);
     }
 }
