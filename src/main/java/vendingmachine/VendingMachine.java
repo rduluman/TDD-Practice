@@ -6,9 +6,6 @@ public class VendingMachine {
     Set<String> products = Set.of("cola", "sprite", "fanta", "pepsi");
 
     public String getProduct(String product) {
-        if (products.contains(product)) {
-            return product;
-        }
-        return null;
+        return products.contains(product) ? product : null;
     }
 }
